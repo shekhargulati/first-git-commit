@@ -49,7 +49,7 @@ async fn main(){
                                 .wait_with_output()
                                 .expect("failed to wait on 'sed'");
                             let encoded = String::from_utf8_lossy(sed_out.stdout.as_slice());
-                            Response::builder().body(format!("Output: {}", encoded))
+                            Response::builder().body(format!("{}", encoded))
                         });
     
     warp::serve(first_commit_endpoint)
